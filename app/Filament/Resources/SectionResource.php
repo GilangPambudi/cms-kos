@@ -34,12 +34,12 @@ class SectionResource extends Resource
                         ->required()->image()->disk('public'),
                     Forms\Components\RichEditor::make('content')
                         ->required(),
-                    Forms\Components\Select::make('post_as')
-                        ->required()
-                        ->options([
-                            'JUMBOTRON' => 'Jumbotron',
-                            'ABOUT' => 'About',
-                        ]),
+                    // Forms\Components\Select::make('post_as')
+                    //     ->required()
+                    //     ->options([
+                    //         'JUMBOTRON' => 'Jumbotron',
+                    //         'ABOUT' => 'About',
+                    //     ]),
                 ])
                 ->columnSpanFull(),
         ]);

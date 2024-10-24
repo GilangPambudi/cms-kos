@@ -30,8 +30,6 @@ class FacilitiesResource extends Resource
                     Forms\Components\TextInput::make('title')
                         ->required()
                         ->maxLength(255),
-                    Forms\Components\RichEditor::make('content')
-                        ->required(),
                 ])
                 ->columnSpanFull(),
         ]);
@@ -44,8 +42,6 @@ class FacilitiesResource extends Resource
                 Tables\Columns\TextColumn::make('title')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('content')->limit(50)
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -10,7 +10,6 @@
     $first_wa_name = get_setting_data('first_wa')['label'];
     $second_wa_name = get_setting_data('second_wa')['label'];
     $photos = get_photos('PHOTOS');
-
 @endphp
 
 <!DOCTYPE html>
@@ -23,8 +22,9 @@
     <meta name="author" content="" />
     <title>{{ $site_name }}</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{ asset('template/assets/favicon.ico') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('template/assets/house-solid.svg') }}" />
     <!-- Font Awesome icons (free version)-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
@@ -96,15 +96,17 @@
                 <div class="divider-custom-line"></div>
             </div>
             <!-- Facilities List Items-->
-            <div class="row justify-content-center">
-                <ul class="list-group">
-                    @foreach ($facilities as $item)
-                        <li class="list-group-item">
-                            <h4>{{ $item->title }}</h4>
-                            <p>{!! strip_tags($item->content) !!}</p>
-                        </li>
-                    @endforeach
-                </ul>
+            <div class="row">
+                @foreach ($facilities as $item)
+                    <div class="col-md-4 mb-4 d-flex align-items-stretch">
+                        <div class="card w-100 rounded border-0 text">
+                            <div class="card-body d-flex flex-column bg-primary rounded">
+                                <h4 class="card-title text-center text-white">{{ $item->title }}</h4>
+                                {{-- <p class="card-text flex-grow-1 text-white">{!! strip_tags($item->content) !!}</p> --}}
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -149,7 +151,7 @@
                     <div class="col-md-4">
                         <img class="img-fluid rounded mb-4" src="{{ Storage::url($photo->thumbnail) }}"
                             alt="thumbnail" />
-                        <h4 class="text-center">{{ $photo->description }}</h4>
+                        <h4 class="text-center mb-4">{{ $photo->description }}</h4>
                     </div>
                 @endforeach
             </div>
@@ -169,10 +171,10 @@
             </div>
             <div class="row justify-content-center">
                 <div class="text-center">
-                    <a class="btn btn-secondary btn-xl d-inline-block mx-4">
+                    <a class="btn btn-dark btn-xl d-inline-block mx-4 text-primary">
                         <i class="fab fa-whatsapp"></i> {{ $first_wa }} ({{ $first_wa_name }})
                     </a>
-                    <a class="btn btn-secondary btn-xl d-inline-block mx-4">
+                    <a class="btn btn-dark btn-xl d-inline-block mx-4 text-primary">
                         <i class="fab fa-whatsapp"></i> {{ $second_wa }} ({{ $second_wa_name }})
                     </a>
                 </div>
