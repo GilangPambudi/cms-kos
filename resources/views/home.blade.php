@@ -171,10 +171,10 @@
             </div>
             <div class="row justify-content-center">
                 <div class="text-center">
-                    <a class="btn btn-dark btn-xl d-inline-block mx-4 text-primary">
+                    <a class="btn btn-light btn-xl d-inline-block mx-4 text-dark" href="https://wa.me/62{{ substr($first_wa, 1) }}" target="_blank">
                         <i class="fab fa-whatsapp"></i> {{ $first_wa }} ({{ $first_wa_name }})
                     </a>
-                    <a class="btn btn-dark btn-xl d-inline-block mx-4 text-primary">
+                    <a class="btn btn-light btn-xl d-inline-block mx-4 text-dark" href="https://wa.me/62{{ substr($second_wa, 1) }}" target="_blank">
                         <i class="fab fa-whatsapp"></i> {{ $second_wa }} ({{ $second_wa_name }})
                     </a>
                 </div>
